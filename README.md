@@ -1,12 +1,17 @@
 # Archelec — Topic Modeling of French Campaign Manifestos (1981–1993)
 
-> NLP Project — ENSAE, Deep Learning for Natural Language Processing, 2026
 
 ## Summary
 
 This project analyses the **campaign manifestos** (*professions de foi*) of candidates in the French legislative elections of **1981, 1988 and 1993** using topic modeling techniques (LDA, NMF, BERTopic). The goal is to extract dominant themes from political discourse, study their temporal evolution across three landmark elections of the Mitterrand era, and cross-reference these themes with candidate metadata (political affiliation, gender, profession).
 
+## Data
+
+
 The corpus comes from the [Archelec](https://archelec.sciencespo.fr/) project (Sciences Po / CEVIPOF), which gathers digitised electoral archives of the French Fifth Republic.
+
+More precisely, metadata can be downloaded from [archelec.sciencespo.fr/explorer](https://archelec.sciencespo.fr/explorer). OCR transcriptions are available via the GitLab repository [arkindex_archelec](https://gitlab.teklia.com/ckermorvant/arkindex_archelec) or directly from [archive.org](https://archive.org/) (URLs in the `ocr_url` column of the CSV).
+
 
 ## Repository structure
 
@@ -25,7 +30,7 @@ The corpus comes from the [Archelec](https://archelec.sciencespo.fr/) project (S
                     
 ```
 
-## Methodology
+## Methodology of the notebooks
 
 ### 1. Data and preprocessing
 
@@ -44,7 +49,7 @@ Three approaches compared, following the course curriculum:
 | **NMF** (scikit-learn) | TF-IDF                | Matrix factorisation           |
 | **BERTopic**           | SBERT embeddings      | Embedding-based clustering     |
 
-Evaluation using coherence metrics: c_v, u_mass, c_npmi.
+Evaluation using coherence metrics: c_v, u_mass.
 
 ### 3. Cross-analyses
 
@@ -54,7 +59,6 @@ Evaluation using coherence metrics: c_v, u_mass, c_npmi.
 - Triple cross-tabulation: topics × family × year
 - Topics × candidate gender
 - Topics × candidate profession
-- Supervised classification: predicting political family from text
 
 ## Key findings
 
@@ -65,27 +69,11 @@ Evaluation using coherence metrics: c_v, u_mass, c_npmi.
 - Some topics change ownership across elections, reflecting evolving political dynamics.
 - Topic distributions are consistent with candidate metadata, especially political affiliation and profession.
 
-<!--
-Drafting notes:
-- NMF produces the most coherent topics (c_v = 0.74 vs 0.59 for LDA)
-- BERTopic detects the "national template" phenomenon (identical tracts for FN, LO, Greens)
-- Thematic evolution: rise of immigration theme between 81 and 93, disappearance of "union de la gauche"
-- The classifier confusion matrix reveals which families "speak the same language"
--->
 
-## Installation
+## Installation and deployment
 
 ```bash
 pip install -r requirements.txt
-python -m spacy download fr_core_news_md
 ```
+Then run the two notebooks `01_eda.ipynb`and `02_main.ipynb` to see the analysis.
 
-## Data
-
-Metadata can be downloaded from [archelec.sciencespo.fr/explorer](https://archelec.sciencespo.fr/explorer). OCR transcriptions are available via the GitLab repository [arkindex_archelec](https://gitlab.teklia.com/ckermorvant/arkindex_archelec) or directly from [archive.org](https://archive.org/) (URLs in the `ocr_url` column of the CSV).
-
-## References
-
-## Author
-
-Antoine Gilson - ENSAE, 2026
