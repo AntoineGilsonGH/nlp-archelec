@@ -19,13 +19,10 @@ The corpus comes from the [Archelec](https://archelec.sciencespo.fr/) project (S
 │   ├── txt_1981/                  # OCR transcriptions 1981
 │   ├── txt_1988/                  # OCR transcriptions 1988
 │   └── txt_1993/                  # OCR transcriptions 1993
-├── notebooks/
-│   ├── 01_eda.ipynb               # Loading, preprocessing, exploratory analysis
-│   └── 02_main.ipynb              # Topic modeling, metadata cross-analysis
-├── src/
-│   └── famille_politique.py       # Party → political family mapping
-└── report/
-    └── report.pdf                 # Report (NeurIPS format)
+│── 01_eda.ipynb                   # Loading, preprocessing, exploratory analysis
+│── 02_main.ipynb                  # Topic modeling, metadata cross-analysis    
+└── report.pdf
+                    
 ```
 
 ## Methodology
