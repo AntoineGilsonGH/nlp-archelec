@@ -32,4 +32,4 @@ plotly>=5.15
 # --- Utilities ---
 tqdm>=4.65
 langdetect>=1.0
-ntlk>=3.8
+nltk>=3.8
