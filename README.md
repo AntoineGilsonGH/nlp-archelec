@@ -58,7 +58,12 @@ Evaluation using coherence metrics: c_v, u_mass, c_npmi.
 
 ## Key findings
 
-*To be completed after result interpretation.*
+- NMF produces the most coherent and interpretable topics, outperforming LDA and BERTopic on this corpus.
+- Political discourse is highly segmented: each political family concentrates on a small set of distinct themes.
+- Far-right, far-left and Green parties show strong thematic specialisation, while mainstream parties are more diffuse.
+- Major shifts occur over time, with a rise in immigration and security issues and the emergence of environmental themes.
+- Some topics change ownership across elections, reflecting evolving political dynamics.
+- Topic distributions are consistent with candidate metadata, especially political affiliation and profession.
 
 <!--
 Drafting notes:
